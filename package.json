@@ -16,7 +16,16 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@mdx-js/react": "^2.3.0",
+    "decap-cms-app": "^3.1.10",
     "gatsby": "^5.13.5",
+    "gatsby-plugin-decap-cms": "^4.0.4",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-mdx": "^5.13.1",
+    "gatsby-plugin-mdx-source-name": "^1.0.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -24,6 +33,10 @@
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "autoprefixer": "^10.4.19",
+    "gatsby-plugin-postcss": "^6.13.1",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.3.3"
   }
 }
