@@ -4,7 +4,7 @@ import Header from "../components/sections/header";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main className=" bg-secondary">
+    <main className="bg-secondary text-white">
       <Header />
     </main>
   );

@@ -36,32 +36,32 @@ const Header = () => {
     }
   `);
 
-  const image = getImage(data.allMdx.nodes[0].frontmatter.image);
+  const headerData = data.allMdx.nodes[0].frontmatter;
+
+  const image = getImage(headerData.image);
 
   return (
     <section
       className="min-h-screen md:h-screen flex flex-col md:flex-row justify-center items-center
-     gap-20 md:py-20 md:px-12 overflow-hidden snap-start"
+     gap-20 md:px-12 overflow-hidden snap-start"
     >
       <div
-        className="flex flex-col max-w-[1100px] text-center h-full 2xl:justify-center justify-evenly
-      py-80 md:py-32 px-12 md:px-40 relative"
+        className="flex flex-col max-w-[1100px] text-center h-full justify-evenly
+       px-12 md:px-40 relative"
       >
         <div>
           <h1 className="text-6xl font-extrabold mt-3 text-primary">
-            Matma Express
+            {headerData.title}
           </h1>
-          <h3 className="text-3xl">
-            Program szybkiej nauki do matury podstawowej z matematyki
-          </h3>
-          <p className="mt-24 text-4xl font-bold">
-            Dołącz i&nbsp;efektywnie opanuj wszystkie rodzaje zadań maturalnych
-            i&nbsp;zdaj maturę przygotowując się mniej niż 30h!
-          </p>
+          <h3 className="text-3xl font-bold mt-4">{headerData.description}</h3>
         </div>
+        <p className="text-3xl font-medium">{headerData.text}</p>
         <Button primary>Zobacz oferty</Button>
       </div>
-      <div className="absolute left-0 top-0 w-full -z-10 md:z-0 overflow-hidden md:overflow-visible flex justify-center md:block md:relative h-screen md:w-[90rem] xl:w-[70rem] ">
+      <div
+        className="absolute left-0 top-0 w-full overflow-hidden md:overflow-visible flex justify-center
+       md:block md:relative h-screen md:w-[90rem] xl:w-[70rem] "
+      >
         {image && (
           <GatsbyImage
             className="block absolute max-w-[35rem] right-0 bottom-0 drop-shadow-[0_0_60px_rgb(219,39,119)]"

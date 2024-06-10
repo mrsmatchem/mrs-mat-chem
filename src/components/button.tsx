@@ -17,7 +17,7 @@ const Button = ({ children, primary, secondary, ...props }: ButtonProps) => {
           : "bg-secondary-blue hover:shadow-secondary-blue"
       }
       block border-none cursor-pointer self-center py-5 px-7 text-2xl font-semibold text-secondary
-       rounded-2xl duration-300 hover:shadow-md
+       rounded-2xl duration-300 hover:shadow-[0_0_2rem]
       `}
     >
       {children}
