@@ -38,7 +38,18 @@ collections:
       preview: false
     fields:
       - { label: "Tytuł", name: "title", widget: "string" }
-      - { label: "Podpunkty", name: "points", widget: "list" }
-      - { label: "Bonusy", name: "bonuses", widget: "list" }
+      - {
+          label: "Podpunkty",
+          name: "points",
+          widget: "list",
+          summary: "{{fields.point}}",
+          field: { label: "Podpunkt", name: "point", widget: "markdown" },
+        }
+      - {
+          label: "Bonusy",
+          name: "bonuses",
+          widget: "list",
+          field: { label: "Podpunkt", name: "bonus", widget: "markdown" },
+        }
       - { label: "Stara cena", name: "old_price", widget: "number" }
       - { label: "Nowa cena", name: "new_price", widget: "number" }
