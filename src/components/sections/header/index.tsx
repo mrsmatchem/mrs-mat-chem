@@ -1,23 +1,18 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, type ImageDataLike, getImage } from "gatsby-plugin-image";
+import { type DataProps } from "../../../../lib/types";
 import React from "react";
-import Button from "../button";
+import Button from "../../button";
 
-interface DataProps {
-  allMdx: {
-    nodes: {
-      frontmatter: {
-        title: string;
-        description: string;
-        text: string;
-        image: ImageDataLike;
-      };
-    }[];
-  };
+interface HeaderDataProps {
+  title: string;
+  description: string;
+  text: string;
+  image: ImageDataLike;
 }
 
 const Header = () => {
-  const data: DataProps = useStaticQuery(graphql`
+  const data: DataProps<HeaderDataProps> = useStaticQuery(graphql`
     query {
       allMdx(filter: { fields: { source: { eq: "header" } } }) {
         nodes {
@@ -43,11 +38,11 @@ const Header = () => {
   return (
     <section
       className="min-h-screen lg:h-screen flex flex-col lg:flex-row justify-center items-center
-     gap-20 lg:px-12 overflow-hidden snap-start relative"
+      lg:px-12 overflow-hidden snap-start relative"
     >
       <div
         className="flex flex-col max-w-[1100px] text-center min-h-screen justify-evenly
-       px-12 lg:px-40 z-10 bg-black bg-opacity-60 lg:bg-transparent"
+       px-12 z-10 bg-black bg-opacity-60 lg:bg-transparent"
       >
         <div>
           <h1 className="text-6xl font-extrabold mt-3 text-primary">
@@ -59,9 +54,9 @@ const Header = () => {
         <Button primary>Zobacz oferty</Button>
       </div>
       {image && (
-        <div className="absolute bottom-0 max-h-full max-w-[30rem] flex lg:relative">
+        <div className="absolute bottom-0 max-h-full max-w-[25rem] lg:min-w-[25rem] flex lg:self-end lg:relative">
           <GatsbyImage
-            className=" drop-shadow-[0_0_60px_rgb(219,39,119)]"
+            className="h-full w-full drop-shadow-[0_0_60px_rgb(219,39,119)]"
             image={image}
             alt="MrsMatChem's portrait"
           />
