@@ -51,5 +51,10 @@ collections:
           widget: "list",
           field: { label: "Podpunkt", name: "bonus", widget: "markdown" },
         }
-      - { label: "Stara cena", name: "old_price", widget: "number" }
+      - {
+          label: "Stara cena",
+          name: "old_price",
+          widget: "number",
+          required: false,
+        }
       - { label: "Nowa cena", name: "new_price", widget: "number" }
