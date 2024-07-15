@@ -2,7 +2,6 @@ import React from "react";
 import { OfferDataProps } from ".";
 
 const Offer = ({ data }: { data: OfferDataProps }) => {
-  console.log(data);
   return (
     <div
       className="grow shrink basis-[25rem] flex flex-col justify-between bg-[rgb(9_7_66)]

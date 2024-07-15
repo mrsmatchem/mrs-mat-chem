@@ -31,6 +31,13 @@ const config: GatsbyConfig = {
         path: `${__dirname}/data/offers`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `testimonials`,
+        path: `${__dirname}/data/testimonials`,
+      },
+    },
   ],
 };
 

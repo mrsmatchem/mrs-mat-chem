@@ -23,6 +23,7 @@ const Offers = () => {
             points
             title
           }
+          id
         }
       }
     }
