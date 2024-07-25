@@ -10,7 +10,7 @@ const Offer = ({ data }: { data: OfferDataProps }) => {
     >
       <div className="pt-12 pl-8 pr-8">
         <h3 className="text-3xl font-bold text-center">{data.title}</h3>
-        <ul className="text-xl mt-8 text-left">
+        <ul className="list-disc text-xl mt-8 text-left">
           {data.points.map((point, index) => (
             <li key={index} className="mt-4 mr-8">
               {point}

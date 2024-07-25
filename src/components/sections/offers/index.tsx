@@ -32,7 +32,7 @@ const Offers = () => {
   const offers = data.allMdx.nodes;
 
   return (
-    <section className="min-h-screen py-8 px-[3%] lg:px-[9%]">
+    <section id="offers" className="min-h-screen py-8 px-[3%]">
       <div className="flex justify-center items-stretch flex-wrap gap-8">
         {offers.map((offer) => (
           <Offer key={offer.id} data={offer.frontmatter} />

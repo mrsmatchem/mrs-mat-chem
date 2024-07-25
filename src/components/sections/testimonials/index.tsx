@@ -43,7 +43,7 @@ const Testimonials = () => {
   const testimonials = data.allMdx.nodes;
 
   return (
-    <div className="columns-2 p-8">
+    <div className="p-8 flex flex-wrap justify-between gap-6 items-start">
       {testimonials.map((testimonial) => (
         <Testimonial key={testimonial.id} data={testimonial.frontmatter} />
       ))}

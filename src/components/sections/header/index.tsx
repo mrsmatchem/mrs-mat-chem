@@ -35,6 +35,11 @@ const Header = () => {
 
   const image = getImage(headerData.image);
 
+  const scrollToOffers = () =>
+    document
+      .querySelector("#offers")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+
   return (
     <section
       className="min-h-screen lg:h-screen flex flex-col lg:flex-row justify-center items-center
@@ -51,7 +56,9 @@ const Header = () => {
           <h3 className="text-3xl font-bold mt-4">{headerData.description}</h3>
         </div>
         <p className="text-2xl font-medium py-12">{headerData.text}</p>
-        <Button primary>Zobacz oferty</Button>
+        <Button primary onClick={scrollToOffers}>
+          Zobacz oferty
+        </Button>
       </div>
       {image && (
         <div className="absolute bottom-0 max-h-full max-w-[25rem] lg:min-w-[25rem] flex lg:self-end lg:relative">
