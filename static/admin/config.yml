@@ -6,10 +6,9 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "header"
-    label: "Nagłówek"
-    folder: "data/header"
-    create: false
+  - label: "Sekcje"
+    name: "sections"
+    folder: "data"
     slug: "index"
     media_folder: ""
     public_folder: ""
@@ -18,86 +17,83 @@ collections:
     format: frontmatter
     editor:
       preview: false
-    fields:
-      - { label: "Tytuł", name: "title", widget: "string" }
-      - { label: "Opis", name: "description", widget: "markdown" }
-      - { label: "Tekst", name: "text", widget: "markdown" }
-      - { label: "Zdjęcie", name: "image", widget: "image" }
+    widget: "list"
+    types:
+      - label: "Nagłówek"
+        name: "header"
+        widget: "object"
+        fields:
+          - { label: "Tytuł", name: "title", widget: "string" }
+          - { label: "Opis", name: "description", widget: "markdown" }
+          - { label: "Tekst", name: "text", widget: "markdown" }
+          - { label: "Zdjęcie", name: "image", widget: "image" }
 
-  - name: "offers"
-    label: "Oferty"
-    folder: "data/offers"
-    create: true
-    slug: "index"
-    media_folder: ""
-    public_folder: ""
-    path: "{{title}}/index"
-    extension: mdx
-    format: frontmatter
-    editor:
-      preview: false
-    fields:
-      - { label: "Tytuł", name: "title", widget: "string" }
-      - {
-          label: "Podpunkty",
-          name: "points",
-          widget: "list",
-          summary: "{{fields.point}}",
-          field: { label: "Podpunkt", name: "point", widget: "markdown" },
-        }
-      - {
-          label: "Bonusy",
-          name: "bonuses",
-          widget: "list",
-          summary: "{{fields.bonus}}",
-          field: { label: "Podpunkt", name: "bonus", widget: "markdown" },
-        }
-      - {
-          label: "Stara cena",
-          name: "old_price",
-          widget: "number",
-          required: false,
-        }
-      - { label: "Nowa cena", name: "new_price", widget: "number" }
+      - label: "Teksty między sekcjami"
+        name: "intersection"
+        widget: "object"
+        fields:
+          - label: "Rodzaj"
+            name: "variant"
+            widget: "select"
+            options:
+              - label: "W linii"
+                value: "inline"
 
-  - name: "testimonials"
-    label: "Testimonials"
-    folder: "data/testimonials"
-    create: true
-    slug: "index"
-    media_folder: ""
-    public_folder: ""
-    path: "{{title}}/index"
-    extension: mdx
-    format: frontmatter
-    editor:
-      preview: false
-    fields:
-      - { label: "Imię", name: "name", widget: "string" }
-      - { label: "Zdjęcie", name: "image", widget: "image" }
-      - { label: "Tytuł", name: "title", widget: "string" }
-      - { label: "Komentarz", name: "comment", widget: "text" }
-      - {
-          label: 'Tytuł "przed programem"',
-          name: "before_list_title",
-          widget: "string",
-        }
-      - {
-          label: "Przed programem",
-          name: "before_list",
-          widget: "list",
-          summary: "{{fields.point}}",
-          field: { label: "Podpunkt", name: "point", widget: "markdown" },
-        }
-      - {
-          label: 'Tytuł "po programie"',
-          name: "after_list_title",
-          widget: "string",
-        }
-      - {
-          label: "Po programie",
-          name: "after_list",
-          widget: "list",
-          summary: "{{fields.point}}",
-          field: { label: "Podpunkt", name: "point", widget: "markdown" },
-        }
+      - label: "Oferty"
+        name: "offers"
+        fields:
+          - { label: "Tytuł", name: "title", widget: "string" }
+          - {
+              label: "Podpunkty",
+              name: "points",
+              widget: "list",
+              summary: "{{fields.point}}",
+              field: { label: "Podpunkt", name: "point", widget: "markdown" },
+            }
+          - {
+              label: "Bonusy",
+              name: "bonuses",
+              widget: "list",
+              summary: "{{fields.bonus}}",
+              field: { label: "Podpunkt", name: "bonus", widget: "markdown" },
+            }
+          - {
+              label: "Stara cena",
+              name: "old_price",
+              widget: "number",
+              required: false,
+            }
+          - { label: "Nowa cena", name: "new_price", widget: "number" }
+
+      - label: "Testimonials"
+        name: "testimonials"
+        create: true
+        fields:
+          - { label: "Imię", name: "name", widget: "string" }
+          - { label: "Zdjęcie", name: "image", widget: "image" }
+          - { label: "Tytuł", name: "title", widget: "string" }
+          - { label: "Komentarz", name: "comment", widget: "text" }
+          - {
+              label: 'Tytuł "przed programem"',
+              name: "before_list_title",
+              widget: "string",
+            }
+          - {
+              label: "Przed programem",
+              name: "before_list",
+              widget: "list",
+              summary: "{{fields.point}}",
+              field: { label: "Podpunkt", name: "point", widget: "markdown" },
+            }
+          - {
+              label: 'Tytuł "po programie"',
+              name: "after_list_title",
+              widget: "string",
+            }
+          - {
+              label: "Po programie",
+              name: "after_list",
+              widget: "list",
+              summary: "{{fields.point}}",
+              field: { label: "Podpunkt", name: "point", widget: "markdown" },
+            }

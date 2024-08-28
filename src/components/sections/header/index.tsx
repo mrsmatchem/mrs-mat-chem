@@ -46,8 +46,8 @@ const Header = () => {
       lg:px-12 overflow-hidden snap-start relative"
     >
       <div
-        className="flex flex-col max-w-[1100px] text-center min-h-screen justify-evenly
-       px-12 z-10 bg-black bg-opacity-60 lg:bg-transparent"
+        className="flex flex-col max-w-[1100px] text-center min-h-screen justify-end
+       px-12 pb-20 z-10 bg-black bg-opacity-60 lg:bg-transparent"
       >
         <div>
           <h1 className="text-6xl font-extrabold mt-3 text-primary">
