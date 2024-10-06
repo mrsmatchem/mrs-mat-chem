@@ -20,8 +20,8 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `sections`,
-        path: `${__dirname}/data`,
+        name: `data`,
+        path: `${__dirname}/data/`,
       },
     },
   ],
