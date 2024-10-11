@@ -16,37 +16,37 @@ export interface TestimonialData {
 }
 
 const Testimonials = () => {
-  const data: DataProps<TestimonialData> = useStaticQuery(graphql`
-    query {
-      allMdx(filter: { fields: { source: { eq: "testimonials" } } }) {
-        nodes {
-          frontmatter {
-            name
-            image {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-            title
-            comment
-            before_list_title
-            before_list
-            after_list_title
-            after_list
-          }
-          id
-        }
-      }
-    }
-  `);
+  // const data: DataProps<TestimonialData> = useStaticQuery(graphql`
+  //   query {
+  //     allMdx(filter: { fields: { source: { eq: "testimonials" } } }) {
+  //       nodes {
+  //         frontmatter {
+  //           name
+  //           image {
+  //             childImageSharp {
+  //               gatsbyImageData
+  //             }
+  //           }
+  //           title
+  //           comment
+  //           before_list_title
+  //           before_list
+  //           after_list_title
+  //           after_list
+  //         }
+  //         id
+  //       }
+  //     }
+  //   }
+  // `);
 
-  const testimonials = data.allMdx.nodes;
+  // const testimonials = data.allMdx.nodes;
 
   return (
     <div className="p-8 flex flex-wrap justify-between gap-6 items-start">
-      {testimonials.map((testimonial) => (
+      {/* {testimonials.map((testimonial) => (
         <Testimonial key={testimonial.id} data={testimonial.frontmatter} />
-      ))}
+      ))} */}
     </div>
   );
 };

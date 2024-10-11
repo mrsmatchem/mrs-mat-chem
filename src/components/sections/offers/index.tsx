@@ -12,22 +12,31 @@ export interface OfferDataProps {
 }
 
 const Offers = () => {
-  const data: DataProps<OfferDataProps> = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
-      allMdx(filter: { fields: { source: { eq: "offers" } } }) {
-        nodes {
-          frontmatter {
-            bonuses
-            new_price
-            old_price
-            points
-            title
+      allMdx(filter: {}) {
+        edges {
+          node {
+            frontmatter {
+              sections {
+                offers {
+                  data {
+                    bonuses
+                    new_price
+                    old_price
+                    points
+                    title
+                  }
+                }
+              }
+            }
           }
-          id
         }
       }
     }
   `);
+
+  console.log(data);
 
   const offers = data.allMdx.nodes;
 

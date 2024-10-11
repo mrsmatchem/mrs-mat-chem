@@ -12,28 +12,28 @@ interface HeaderDataProps {
 }
 
 const Header = () => {
-  const data: DataProps<HeaderDataProps> = useStaticQuery(graphql`
-    query {
-      allMdx(filter: { fields: { source: { eq: "header" } } }) {
-        nodes {
-          frontmatter {
-            description
-            image {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-            text
-            title
-          }
-        }
-      }
-    }
-  `);
+  // const data: DataProps<HeaderDataProps> = useStaticQuery(graphql`
+  //   query {
+  //     allMdx(filter: { fields: { source: { eq: "header" } } }) {
+  //       nodes {
+  //         frontmatter {
+  //           description
+  //           image {
+  //             childImageSharp {
+  //               gatsbyImageData
+  //             }
+  //           }
+  //           text
+  //           title
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
-  const headerData = data.allMdx.nodes[0].frontmatter;
+  // const headerData = data.allMdx.nodes[0].frontmatter;
 
-  const image = getImage(headerData.image);
+  // const image = getImage(headerData.image);
 
   const scrollToOffers = () =>
     document
@@ -51,16 +51,16 @@ const Header = () => {
       >
         <div>
           <h1 className="text-6xl font-extrabold mt-3 text-primary">
-            {headerData.title}
+            {/* {headerData.title} */}
           </h1>
-          <h3 className="text-3xl font-bold mt-4">{headerData.description}</h3>
+          {/* <h3 className="text-3xl font-bold mt-4">{headerData.description}</h3> */}
         </div>
-        <p className="text-2xl font-medium py-12">{headerData.text}</p>
+        {/* <p className="text-2xl font-medium py-12">{headerData.text}</p> */}
         <Button primary onClick={scrollToOffers}>
           Zobacz oferty
         </Button>
       </div>
-      {image && (
+      {/* {image && (
         <div className="absolute bottom-0 max-h-full max-w-[25rem] lg:min-w-[25rem] flex lg:self-end lg:relative">
           <GatsbyImage
             className="h-full w-full drop-shadow-[0_0_60px_rgb(219,39,119)]"
@@ -68,7 +68,7 @@ const Header = () => {
             alt="MrsMatChem's portrait"
           />
         </div>
-      )}
+      )} */}
     </section>
   );
 };

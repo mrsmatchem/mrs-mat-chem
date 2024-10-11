@@ -203,8 +203,8 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
       </section>
 
-      <Offers />
-      <Testimonials />
+      {/* <Offers /> */}
+      {/* <Testimonials /> */}
     </main>
   );
 };
