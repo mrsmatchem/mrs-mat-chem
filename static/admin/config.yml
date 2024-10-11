@@ -6,8 +6,8 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - label: "Sekcje"
-    name: "sections"
+  - label: "Pola"
+    name: "fields"
     folder: "data/sections"
     slug: "index"
     media_folder: ""
@@ -17,83 +17,90 @@ collections:
     format: frontmatter
     editor:
       preview: false
-    widget: "list"
-    types:
-      - label: "Nagłówek"
-        name: "header"
-        widget: "object"
-        fields:
-          - { label: "Tytuł", name: "title", widget: "string" }
-          - { label: "Opis", name: "description", widget: "markdown" }
-          - { label: "Tekst", name: "text", widget: "markdown" }
-          - { label: "Zdjęcie", name: "image", widget: "image" }
+    fields:
+      - label: "Sections"
+        name: "sections"
+        widget: "list"
+        types:
+          - label: "Nagłówek"
+            name: "header"
+            widget: object
+            fields:
+              - { label: "Tytuł", name: "title", widget: "string" }
+              - { label: "Opis", name: "description", widget: "markdown" }
+              - { label: "Tekst", name: "text", widget: "markdown" }
+              - { label: "Zdjęcie", name: "image", widget: "image" }
 
-      - label: "Teksty między sekcjami"
-        name: "intersection"
-        widget: "object"
-        fields:
-          - label: "Rodzaj"
-            name: "variant"
-            widget: "select"
-            options:
-              - label: "W linii"
-                value: "inline"
+          - label: "Teksty między sekcjami"
+            name: "intersection"
+            widget: "object"
+            fields:
+              - label: "Rodzaj"
+                name: "variant"
+                widget: select
+                options:
+                  - label: "W linii"
+                    value: "inline"
 
-      - label: "Oferty"
-        name: "offers"
-        fields:
-          - { label: "Tytuł", name: "title", widget: "string" }
-          - {
-              label: "Podpunkty",
-              name: "points",
-              widget: "list",
-              summary: "{{fields.point}}",
-              field: { label: "Podpunkt", name: "point", widget: "markdown" },
-            }
-          - {
-              label: "Bonusy",
-              name: "bonuses",
-              widget: "list",
-              summary: "{{fields.bonus}}",
-              field: { label: "Podpunkt", name: "bonus", widget: "markdown" },
-            }
-          - {
-              label: "Stara cena",
-              name: "old_price",
-              widget: "number",
-              required: false,
-            }
-          - { label: "Nowa cena", name: "new_price", widget: "number" }
+          - label: "Oferty"
+            name: "offers"
+            fields:
+              - { label: "Tytuł", name: "title", widget: "string" }
+              - {
+                  label: "Podpunkty",
+                  name: "points",
+                  widget: "list",
+                  summary: "{{fields.point}}",
+                  field:
+                    { label: "Podpunkt", name: "point", widget: "markdown" },
+                }
+              - {
+                  label: "Bonusy",
+                  name: "bonuses",
+                  widget: "list",
+                  summary: "{{fields.bonus}}",
+                  field:
+                    { label: "Podpunkt", name: "bonus", widget: "markdown" },
+                }
+              - {
+                  label: "Stara cena",
+                  name: "old_price",
+                  widget: "number",
+                  required: false,
+                }
+              - { label: "Nowa cena", name: "new_price", widget: "number" }
 
-      - label: "Testimonials"
-        name: "testimonials"
-        create: true
-        fields:
-          - { label: "Imię", name: "name", widget: "string" }
-          - { label: "Zdjęcie", name: "image", widget: "image" }
-          - { label: "Tytuł", name: "title", widget: "string" }
-          - { label: "Komentarz", name: "comment", widget: "text" }
-          - {
-              label: 'Tytuł "przed programem"',
-              name: "before_list_title",
-              widget: "string",
-            }
-          - {
-              label: "Przed programem",
-              name: "before_list",
-              widget: "list",
-              summary: "{{fields.point}}",
-              field: { label: "Podpunkt", name: "point", widget: "markdown" },
-            }
-          - {
-              label: 'Tytuł "po programie"',
-              name: "after_list_title",
-              widget: "string",
-            }
-          - {
-              label: "Po programie",
-              name: "after_list",
-              widget: "list",
-              summary: "{{fields.point}}",
-              field: { label: "Podpunkt", name: "point", widget: "markdown" },
-            }
+          - label: "Testimonials"
+            name: "testimonials"
+            create: true
+            fields:
+              - { label: "Imię", name: "name", widget: "string" }
+              - { label: "Zdjęcie", name: "image", widget: "image" }
+              - { label: "Tytuł", name: "title", widget: "string" }
+              - { label: "Komentarz", name: "comment", widget: "text" }
+              - {
+                  label: 'Tytuł "przed programem"',
+                  name: "before_list_title",
+                  widget: "string",
+                }
+              - {
+                  label: "Przed programem",
+                  name: "before_list",
+                  widget: "list",
+                  summary: "{{fields.point}}",
+                  field:
+                    { label: "Podpunkt", name: "point", widget: "markdown" },
+                }
+              - {
+                  label: 'Tytuł "po programie"',
+                  name: "after_list_title",
+                  widget: "string",
+                }
+              - {
+                  label: "Po programie",
+                  name: "after_list",
+                  widget: "list",
+                  summary: "{{fields.point}}",
+                  field:
+                    { label: "Podpunkt", name: "point", widget: "markdown" },
+                }

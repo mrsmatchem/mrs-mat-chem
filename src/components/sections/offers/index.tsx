@@ -12,40 +12,40 @@ export interface OfferDataProps {
 }
 
 const Offers = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMdx(filter: {}) {
-        edges {
-          node {
-            frontmatter {
-              sections {
-                offers {
-                  data {
-                    bonuses
-                    new_price
-                    old_price
-                    points
-                    title
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  // const data: DataProps<OfferDataProps> = useStaticQuery(graphql`
+  //   query {
+  //     allMdx(filter: {}) {
+  //       edges {
+  //         node {
+  //           frontmatter {
+  //             sections {
+  //               offers {
+  //                 data {
+  //                   bonuses
+  //                   new_price
+  //                   old_price
+  //                   points
+  //                   title
+  //                 }
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
-  console.log(data);
+  // console.log(data);
 
-  const offers = data.allMdx.nodes;
+  // const offers = data.allMdx.nodes;
 
   return (
     <section id="offers" className="min-h-screen py-8 px-[3%]">
       <div className="flex justify-center items-stretch flex-wrap gap-8">
-        {offers.map((offer) => (
+        {/* {offers.map((offer) => (
           <Offer key={offer.id} data={offer.frontmatter} />
-        ))}
+        ))} */}
       </div>
     </section>
   );
