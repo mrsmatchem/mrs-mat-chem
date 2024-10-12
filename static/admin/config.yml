@@ -25,6 +25,7 @@ collections:
           - label: "Nagłówek"
             name: "header"
             widget: object
+            create: false
             fields:
               - { label: "Tytuł", name: "title", widget: "string" }
               - { label: "Opis", name: "description", widget: "markdown" }
@@ -41,34 +42,89 @@ collections:
                 options:
                   - label: "W linii"
                     value: "inline"
+                  - label: "Pod sobą"
+                    value: "column"
+              - label: Teksty
+                name: elements
+                widget: list
+                fields:
+                  - { label: Tekst, name: text, widget: text }
+                  - label: Rodzaj
+                    name: type
+                    widget: select
+                    options:
+                      - label: Nagłówek
+                        value: title
+                      - label: Paragraf
+                        value: paragraph
+                  - label: Kolor
+                    name: color
+                    widget: select
+                    options:
+                      - label: Przewodni
+                        value: primary
+                      - label: Podstawowy
+                        value: base
+
+          - label: Lista kafelków
+            name: tabs
+            widget: object
+            fields:
+              - { label: Nazwa listy, name: name, widget: string }
+              - { label: Tytuł, name: title, widget: string }
+              - label: Podpunkty
+                name: data
+                widget: list
+                fields:
+                  - { label: Nagłówek, name: title, widget: text }
+                  - { label: Tekst, name: text, widget: text }
+                  - { label: Obrazek, name: image, widget: image }
+                  - { label: Opis obrazka, name: imageAlt, widget: string }
 
           - label: "Oferty"
             name: "offers"
             fields:
-              - { label: "Tytuł", name: "title", widget: "string" }
-              - {
-                  label: "Podpunkty",
-                  name: "points",
-                  widget: "list",
-                  summary: "{{fields.point}}",
-                  field:
-                    { label: "Podpunkt", name: "point", widget: "markdown" },
-                }
-              - {
-                  label: "Bonusy",
-                  name: "bonuses",
-                  widget: "list",
-                  summary: "{{fields.bonus}}",
-                  field:
-                    { label: "Podpunkt", name: "bonus", widget: "markdown" },
-                }
-              - {
-                  label: "Stara cena",
-                  name: "old_price",
-                  widget: "number",
-                  required: false,
-                }
-              - { label: "Nowa cena", name: "new_price", widget: "number" }
+              - label: Tytuł
+                name: title
+                widget: string
+                default: Oferty
+              - label: Lista ofert
+                name: data
+                widget: list
+                min: 1
+                fields:
+                  - { label: "Tytuł", name: "title", widget: "string" }
+                  - {
+                      label: "Podpunkty",
+                      name: "points",
+                      widget: "list",
+                      summary: "{{fields.point}}",
+                      field:
+                        {
+                          label: "Podpunkt",
+                          name: "point",
+                          widget: "markdown",
+                        },
+                    }
+                  - {
+                      label: "Bonusy",
+                      name: "bonuses",
+                      widget: "list",
+                      summary: "{{fields.bonus}}",
+                      field:
+                        {
+                          label: "Podpunkt",
+                          name: "bonus",
+                          widget: "markdown",
+                        },
+                    }
+                  - {
+                      label: "Stara cena",
+                      name: "old_price",
+                      widget: "number",
+                      required: false,
+                    }
+                  - { label: "Nowa cena", name: "new_price", widget: "number" }
 
           - label: "Testimonials"
             name: "testimonials"
