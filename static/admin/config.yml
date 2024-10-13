@@ -50,7 +50,7 @@ collections:
                 fields:
                   - { label: Tekst, name: text, widget: text }
                   - label: Rodzaj
-                    name: type
+                    name: textType
                     widget: select
                     options:
                       - label: Nagłówek
