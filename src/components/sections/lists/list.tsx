@@ -37,7 +37,7 @@ const List = ({ variant, dataType }: { variant: string; dataType: string }) => {
         <ul className="max-w-md mx-auto mt-16 space-y-12">
           {list.data.map((item, index) => {
             return (
-              <li className="relative flex items-start">
+              <li key={index} className="relative flex items-start">
                 {index !== list.data.length - 1 && (
                   <div
                     className="-ml-0.5 absolute mt-0.5 top-14 left-8 w-px border-l-4 border-dotted border-gray-300 h-full"

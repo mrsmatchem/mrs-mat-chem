@@ -67,7 +67,7 @@ collections:
                         value: base
 
           - label: Lista kafelków
-            name: tabs
+            name: tabsList
             widget: object
             fields:
               - { label: Nazwa listy, name: name, widget: string }
