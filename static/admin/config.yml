@@ -23,7 +23,6 @@ collections:
           - label: "Nagłówek"
             name: "header"
             widget: object
-            folder: ""
             fields:
               - { label: "Tytuł", name: "title", widget: "string" }
               - { label: "Opis", name: "description", widget: "markdown" }
