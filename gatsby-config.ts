@@ -17,6 +17,7 @@ const config: GatsbyConfig = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-mdx`,
     `gatsby-plugin-mdx-source-name`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
