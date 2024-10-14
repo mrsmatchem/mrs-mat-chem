@@ -12,7 +12,7 @@ collections:
     slug: "index"
     media_folder: ""
     public_folder: ""
-    path: "{{title}}/index.json"
+    path: "{{title}}/index"
     extension: json
     format: json
     fields:
