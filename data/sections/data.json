@@ -1,3 +1,11 @@
 {
-  "sections": []
+  "sections": [
+    {
+      "type": "header",
+      "title": "MRS",
+      "description": "dfsagasdfgas",
+      "text": "asdgasfhs",
+      "image": "/img/dex-mdf-biale-drewno.jpg"
+    }
+  ]
 }
