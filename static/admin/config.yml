@@ -14,82 +14,134 @@ collections:
       - label: Sekcje
         name: "sections"
         file: "data/sections/sections.json"
-        widget: "list"
-        types:
-          - label: "Nagłówek"
-            name: "header"
-            widget: object
-            fields:
-              - { label: "Tytuł", name: "title", widget: "string" }
-              - { label: "Opis", name: "description", widget: "markdown" }
-              - { label: "Tekst", name: "text", widget: "markdown" }
-              - { label: "Zdjęcie", name: "image", widget: "image" }
-
-          - label: "Teksty między sekcjami"
-            name: "intersection"
-            widget: "object"
-            fields:
-              - label: "Rodzaj"
-                name: "variant"
-                widget: select
-                options:
-                  - label: "W linii"
-                    value: "inline"
-                  - label: "Pod sobą"
-                    value: "column"
-              - label: Teksty
-                name: elements
-                widget: list
-                fields:
-                  - { label: Tekst, name: text, widget: text }
-                  - label: Rodzaj
-                    name: textType
-                    widget: select
-                    options:
-                      - label: Nagłówek
-                        value: title
-                      - label: Paragraf
-                        value: paragraph
-                  - label: Kolor
-                    name: color
-                    widget: select
-                    options:
-                      - label: Przewodni
-                        value: primary
-                      - label: Podstawowy
-                        value: base
-
-          - label: Lista kafelków
-            name: tabsList
-            widget: object
-            fields:
-              - { label: Nazwa listy, name: name, widget: string }
-              - { label: Tytuł, name: title, widget: string }
-              - label: Podpunkty
-                name: data
-                widget: list
-                fields:
-                  - { label: Nagłówek, name: title, widget: text }
-                  - { label: Tekst, name: text, widget: text }
-                  - { label: Obrazek, name: image, widget: image }
-                  - { label: Opis obrazka, name: imageAlt, widget: string }
-
-          - label: "Oferty"
-            name: "offers"
-            fields:
-              - label: Tytuł
-                name: title
-                widget: string
-                default: Oferty
-              - label: Lista ofert
-                name: data
-                widget: list
-                min: 1
+        fields:
+          - label: "Sections"
+            name: "sectionsList"
+            widget: "list"
+            types:
+              - label: "Nagłówek"
+                name: "header"
+                widget: object
                 fields:
                   - { label: "Tytuł", name: "title", widget: "string" }
+                  - { label: "Opis", name: "description", widget: "markdown" }
+                  - { label: "Tekst", name: "text", widget: "markdown" }
+                  - { label: "Zdjęcie", name: "image", widget: "image" }
+
+              - label: "Teksty między sekcjami"
+                name: "intersection"
+                widget: "object"
+                fields:
+                  - label: "Rodzaj"
+                    name: "variant"
+                    widget: select
+                    options:
+                      - label: "W linii"
+                        value: "inline"
+                      - label: "Pod sobą"
+                        value: "column"
+                  - label: Teksty
+                    name: elements
+                    widget: list
+                    fields:
+                      - { label: Tekst, name: text, widget: text }
+                      - label: Rodzaj
+                        name: textType
+                        widget: select
+                        options:
+                          - label: Nagłówek
+                            value: title
+                          - label: Paragraf
+                            value: paragraph
+                      - label: Kolor
+                        name: color
+                        widget: select
+                        options:
+                          - label: Przewodni
+                            value: primary
+                          - label: Podstawowy
+                            value: base
+
+              - label: Lista kafelków
+                name: tabsList
+                widget: object
+                fields:
+                  - { label: Nazwa listy, name: name, widget: string }
+                  - { label: Tytuł, name: title, widget: string }
+                  - label: Podpunkty
+                    name: data
+                    widget: list
+                    fields:
+                      - { label: Nagłówek, name: title, widget: text }
+                      - { label: Tekst, name: text, widget: text }
+                      - { label: Obrazek, name: image, widget: image }
+                      - { label: Opis obrazka, name: imageAlt, widget: string }
+
+              - label: "Oferty"
+                name: "offers"
+                fields:
+                  - label: Tytuł
+                    name: title
+                    widget: string
+                    default: Oferty
+                  - label: Lista ofert
+                    name: data
+                    widget: list
+                    min: 1
+                    fields:
+                      - { label: "Tytuł", name: "title", widget: "string" }
+                      - {
+                          label: "Podpunkty",
+                          name: "points",
+                          widget: "list",
+                          summary: "{{fields.point}}",
+                          field:
+                            {
+                              label: "Podpunkt",
+                              name: "point",
+                              widget: "markdown",
+                            },
+                        }
+                      - {
+                          label: "Bonusy",
+                          name: "bonuses",
+                          widget: "list",
+                          summary: "{{fields.bonus}}",
+                          field:
+                            {
+                              label: "Podpunkt",
+                              name: "bonus",
+                              widget: "markdown",
+                            },
+                        }
+                      - {
+                          label: "Stara cena",
+                          name: "old_price",
+                          widget: "number",
+                          required: false,
+                        }
+                      - {
+                          label: "Nowa cena",
+                          name: "new_price",
+                          widget: "number",
+                        }
+
+              - label: "Testimonials"
+                name: "testimonials"
+                create: true
+                fields:
+                  - { label: "Imię", name: "name", widget: "string" }
+                  - { label: "Zdjęcie", name: "image", widget: "image" }
+                  - { label: "Tytuł", name: "title", widget: "string" }
+                  - { label: "Komentarz", name: "comment", widget: "text" }
                   - {
-                      label: "Podpunkty",
-                      name: "points",
+                      label: 'Tytuł "przed programem"',
+                      name: "before_list_title",
+                      widget: "string",
+                    }
+                  - {
+                      label: "Przed programem",
+                      name: "before_list",
                       widget: "list",
                       summary: "{{fields.point}}",
                       field:
@@ -100,56 +152,19 @@ collections:
                         },
                     }
                   - {
-                      label: "Bonusy",
-                      name: "bonuses",
+                      label: 'Tytuł "po programie"',
+                      name: "after_list_title",
+                      widget: "string",
+                    }
+                  - {
+                      label: "Po programie",
+                      name: "after_list",
                       widget: "list",
-                      summary: "{{fields.bonus}}",
+                      summary: "{{fields.point}}",
                       field:
                         {
                           label: "Podpunkt",
-                          name: "bonus",
+                          name: "point",
                           widget: "markdown",
                         },
                     }
-                  - {
-                      label: "Stara cena",
-                      name: "old_price",
-                      widget: "number",
-                      required: false,
-                    }
-                  - { label: "Nowa cena", name: "new_price", widget: "number" }
-
-          - label: "Testimonials"
-            name: "testimonials"
-            create: true
-            fields:
-              - { label: "Imię", name: "name", widget: "string" }
-              - { label: "Zdjęcie", name: "image", widget: "image" }
-              - { label: "Tytuł", name: "title", widget: "string" }
-              - { label: "Komentarz", name: "comment", widget: "text" }
-              - {
-                  label: 'Tytuł "przed programem"',
-                  name: "before_list_title",
-                  widget: "string",
-                }
-              - {
-                  label: "Przed programem",
-                  name: "before_list",
-                  widget: "list",
-                  summary: "{{fields.point}}",
-                  field:
-                    { label: "Podpunkt", name: "point", widget: "markdown" },
-                }
-              - {
-                  label: 'Tytuł "po programie"',
-                  name: "after_list_title",
-                  widget: "string",
-                }
-              - {
-                  label: "Po programie",
-                  name: "after_list",
-                  widget: "list",
-                  summary: "{{fields.point}}",
-                  field:
-                    { label: "Podpunkt", name: "point", widget: "markdown" },
-                }
