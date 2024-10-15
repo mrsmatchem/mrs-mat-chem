@@ -8,12 +8,11 @@ public_folder: /img
 collections:
   - label: "Pola"
     name: "fields"
-    format: json
+    create: true
     files:
-      - label: Plik
-        name: "file"
+      - label: Sekcje
+        name: "data"
         delete: false
-        create: true
         file: "data/sections/data.json"
         fields:
           - label: "Sections"
