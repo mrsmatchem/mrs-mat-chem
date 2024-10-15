@@ -22,6 +22,22 @@
           "color": "base"
         }
       ]
+    },
+    {
+      "type": "offers",
+      "title": "Oferty",
+      "data": [
+        {
+          "points": [
+            "asdfgasdg"
+          ],
+          "title": "afdgsdfg",
+          "bonuses": [
+            "afhasfhasfh"
+          ],
+          "new_price": 123412
+        }
+      ]
     }
   ]
 }
