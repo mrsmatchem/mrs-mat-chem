@@ -6,6 +6,24 @@
       "description": "dfsagasdfgas",
       "text": "asdgasfhs",
       "image": "/img/dex-mdf-biale-drewno.jpg"
+    },
+    {
+      "type": "offers",
+      "title": "Oferty",
+      "data": [
+        {
+          "title": "fdshs",
+          "points": [
+            "dfgjdfghj",
+            "gfdjdfgj"
+          ],
+          "bonuses": [
+            "dfgjdfgj",
+            "dgfjdfgj"
+          ],
+          "new_price": 121243
+        }
+      ]
     }
   ]
 }
