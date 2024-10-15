@@ -6709,6 +6709,13 @@ gatsby-telemetry@^4.13.1:
     lodash "^4.17.21"
     node-fetch "^2.6.11"
 
+gatsby-transformer-json-key-value-to-array@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json-key-value-to-array/-/gatsby-transformer-json-key-value-to-array-0.0.1.tgz#7e92ed8c06af60a80c60bcd95f9fc857c338722e"
+  integrity sha512-sOLG1BEA5ysuOuCqgjI0217H9rbrTpSOQ6bCIoeXZfiiYBfwPqH3LO4sE5Bk/qCWxYAWOJVJO/MnEFSU63ZDgA==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+
 gatsby-transformer-json@^5.13.1:
   version "5.13.1"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-5.13.1.tgz#bfae37eb6ebfe8b99e15891f112c6add928353f9"

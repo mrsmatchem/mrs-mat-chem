@@ -2,10 +2,21 @@
   "sections": [
     {
       "type": "header",
-      "title": "MRS",
-      "description": "dfsagasdfgas",
-      "text": "asdgasfhs",
-      "image": "/img/dex-mdf-biale-drewno.jpg"
+      "title": "Matma Express",
+      "description": "Program szybkiej nauki do matury podstawowej z matematyki",
+      "text": "Dołącz i efektywnie opanuj wszystkie rodzaje zadań maturalnych i zdaj maturę przygotowując się mniej niż 30h!",
+      "image": "/images/header/portrait-bg.png"
+    },
+    {
+      "type": "intersection",
+      "variant": "inline",
+      "elements": [
+        {
+          "text": "Matma Express",
+          "textType": "title",
+          "color": "primary"
+        }
+      ]
     },
     {
       "type": "offers",
@@ -13,14 +24,8 @@
       "data": [
         {
           "title": "fdshs",
-          "points": [
-            "dfgjdfghj",
-            "gfdjdfgj"
-          ],
-          "bonuses": [
-            "dfgjdfgj",
-            "dgfjdfgj"
-          ],
+          "points": ["dfgjdfghj", "gfdjdfgj"],
+          "bonuses": ["dfgjdfgj", "dgfjdfgj"],
           "new_price": 121243
         }
       ]
