@@ -18,7 +18,6 @@ const config: GatsbyConfig = {
     `gatsby-plugin-mdx`,
     `gatsby-plugin-mdx-source-name`,
     `gatsby-transformer-json`,
-    `gatsby-transformer-json-key-value-to-array`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,6 +26,9 @@ const config: GatsbyConfig = {
       },
     },
   ],
+  mapping: {
+    "SectionsJson.sectionsList": `TypesJson.type`,
+  },
 };
 
 export default config;

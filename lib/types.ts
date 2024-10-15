@@ -1,3 +1,5 @@
+import { ImageDataLike } from "gatsby-plugin-image";
+
 export interface DataProps<T> {
   allMdx: {
     nodes: {
@@ -5,4 +7,12 @@ export interface DataProps<T> {
       id: string;
     }[];
   };
+}
+
+export interface HeaderDataProps {
+  type: string;
+  title: string;
+  description: string;
+  text: string;
+  image: string;
 }

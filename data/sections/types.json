@@ -1,0 +1,25 @@
+[
+  {
+    "type": "header",
+    "title": "Matma Express",
+    "description": "Program szybkiej nauki do matury podstawowej z matematyki",
+    "text": "Dołącz i efektywnie opanuj wszystkie rodzaje zadań maturalnych i zdaj maturę przygotowując się mniej niż 30h!",
+    "image": "img/dex-mdf-biale-drewno.jpg"
+  },
+  {
+    "type": "intersection",
+    "variant": "inline",
+    "elements": [
+      {
+        "text": "Matma Express",
+        "textType": "title",
+        "color": "primary"
+      },
+      {
+        "text": "to program skutecznej i kompleksowej nauki matematyki, przygotowany tak, aby uczniowie mieli stałe wsparcie, kursy, rozwiązania zadań i ich wytłumaczenie, kiedykolwiek tylko potrzebują.",
+        "textType": "paragraph",
+        "color": "base"
+      }
+    ]
+  }
+]
