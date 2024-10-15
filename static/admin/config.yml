@@ -8,10 +8,10 @@ public_folder: /img
 collections:
   - label: "Pola"
     name: "fields"
-    folder: "data/sections"
     files:
       - label: Plik
-        file: "index.json"
+        name: "file"
+        file: "data/sections/index.json"
         fields:
           - label: "Sections"
             name: "sections"
