@@ -27,7 +27,7 @@ const config: GatsbyConfig = {
     },
   ],
   mapping: {
-    "SectionsJson.sectionsList": `TypesJson.type`,
+    "SectionsJson.sectionsList.type": `TypesJson.type`,
   },
 };
 
