@@ -11,7 +11,9 @@ collections:
     files:
       - label: Plik
         name: "file"
-        file: "data/sections/index.json"
+        delete: false
+        create: true
+        file: "data/sections/data.json"
         fields:
           - label: "Sections"
             name: "sections"
