@@ -9,7 +9,7 @@ collections:
   - label: "Sekcje"
     name: "sectionsCollection"
     folder: "data/sections"
-    path: "{{slug}}/index"
+    path: "index"
     extension: mdx
     format: frontmatter
     media_folder: ""
