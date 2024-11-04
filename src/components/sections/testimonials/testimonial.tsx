@@ -1,9 +1,9 @@
 import React from "react";
-import { TestimonialData } from ".";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
+import { TestimonialDataProps } from "../../../../lib/types";
 
-const Testimonial = ({ data }: { data: TestimonialData }) => {
+const Testimonial = ({ data }: { data: TestimonialDataProps }) => {
   const image = getImage(data.image);
 
   return (

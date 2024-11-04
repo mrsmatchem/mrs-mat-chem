@@ -12,8 +12,9 @@ collections:
     slug: "index"
     extension: mdx
     format: frontmatter
-    media_folder: ""
-    public_folder: ""
+    path: "/index"
+    media_folder: "media"
+    public_folder: "media"
     fields:
       - label: "Lista sekcji"
         name: "sections"
@@ -21,134 +22,174 @@ collections:
         types:
           - label: "Nagłówek"
             name: "header"
-            fields:
-              - { label: "Tytuł", name: "title", widget: "string" }
-              - { label: "Opis", name: "description", widget: "markdown" }
-              - { label: "Tekst", name: "text", widget: "markdown" }
-              - { label: "Zdjęcie", name: "image", widget: "image" }
+            field:
+              label: Dane
+              name: header
+              widget: object
+              fields:
+                - { label: "Tytuł", name: "title", widget: "string" }
+                - { label: "Opis", name: "description", widget: "markdown" }
+                - { label: "Tekst", name: "text", widget: "markdown" }
+                - { label: "Zdjęcie", name: "image", widget: "image" }
 
           - label: "Teksty między sekcjami"
             name: "intersection"
-            fields:
-              - label: "Rodzaj"
-                name: "variant"
-                widget: select
-                options:
-                  - label: "W linii"
-                    value: "inline"
-                  - label: "Pod sobą"
-                    value: "column"
-              - label: Teksty
-                name: elements
-                widget: list
-                fields:
-                  - { label: Tekst, name: text, widget: text }
-                  - label: Rodzaj
-                    name: textType
-                    widget: select
-                    options:
-                      - label: Nagłówek
-                        value: title
-                      - label: Paragraf
-                        value: paragraph
-                  - label: Kolor
-                    name: color
-                    widget: select
-                    options:
-                      - label: Przewodni
-                        value: primary
-                      - label: Podstawowy
-                        value: base
+            field:
+              label: Dane
+              name: intersection
+              widget: object
+              fields:
+                - label: "Rodzaj"
+                  name: "variant"
+                  widget: select
+                  options:
+                    - label: "W linii"
+                      value: "inline"
+                    - label: "Pod sobą"
+                      value: "column"
+                - label: Teksty
+                  name: elements
+                  widget: list
+                  fields:
+                    - { label: Tekst, name: text, widget: text }
+                    - label: Rodzaj
+                      name: textType
+                      widget: select
+                      options:
+                        - label: Nagłówek
+                          value: title
+                        - label: Paragraf
+                          value: paragraph
+                    - label: Kolor
+                      name: color
+                      widget: select
+                      options:
+                        - label: Przewodni
+                          value: primary
+                        - label: Podstawowy
+                          value: base
 
           - label: "Testimonials"
             name: "testimonials"
-            fields:
-              - { label: "Imię", name: "name", widget: "string" }
-              - { label: "Zdjęcie", name: "image", widget: "image" }
-              - { label: "Tytuł", name: "title", widget: "string" }
-              - { label: "Komentarz", name: "comment", widget: "text" }
-              - {
-                  label: 'Tytuł "przed programem"',
-                  name: "before_list_title",
-                  widget: "string",
-                }
-              - {
-                  label: "Przed programem",
-                  name: "before_list",
-                  widget: "list",
-                  summary: "{{fields.point}}",
-                  field:
-                    { label: "Podpunkt", name: "point", widget: "markdown" },
-                }
-              - {
-                  label: 'Tytuł "po programie"',
-                  name: "after_list_title",
-                  widget: "string",
-                }
-              - {
-                  label: "Po programie",
-                  name: "after_list",
-                  widget: "list",
-                  summary: "{{fields.point}}",
-                  field:
-                    { label: "Podpunkt", name: "point", widget: "markdown" },
-                }
+            field:
+              label: Dane
+              name: testimonials
+              widget: object
+              fields:
+                - label: Tytuł
+                  name: title
+                  widget: string
+                  required: false
+                - label: 'Lista "testimonialsów"'
+                  name: data
+                  widget: list
+                  fields:
+                    - { label: "Imię", name: "name", widget: "string" }
+                    - { label: "Zdjęcie", name: "image", widget: "image" }
+                    - { label: "Tytuł", name: "title", widget: "string" }
+                    - { label: "Komentarz", name: "comment", widget: "text" }
+                    - {
+                        label: 'Tytuł "przed programem"',
+                        name: "before_list_title",
+                        widget: "string",
+                      }
+                    - {
+                        label: "Przed programem",
+                        name: "before_list",
+                        widget: "list",
+                        summary: "{{fields.point}}",
+                        field:
+                          {
+                            label: "Podpunkt",
+                            name: "point",
+                            widget: "markdown",
+                          },
+                      }
+                    - {
+                        label: 'Tytuł "po programie"',
+                        name: "after_list_title",
+                        widget: "string",
+                      }
+                    - {
+                        label: "Po programie",
+                        name: "after_list",
+                        widget: "list",
+                        summary: "{{fields.point}}",
+                        field:
+                          {
+                            label: "Podpunkt",
+                            name: "point",
+                            widget: "markdown",
+                          },
+                      }
 
           - label: Lista kafelków
             name: tabsList
-            fields:
-              - { label: Nazwa listy, name: name, widget: string }
-              - { label: Tytuł, name: title, widget: string }
-              - label: Podpunkty
-                name: data
-                widget: list
-                fields:
-                  - { label: Nagłówek, name: title, widget: text }
-                  - { label: Tekst, name: text, widget: text }
-                  - { label: Obrazek, name: image, widget: image }
-                  - { label: Opis obrazka, name: imageAlt, widget: string }
+            field:
+              label: Dane
+              name: tabsList
+              widget: object
+              fields:
+                - { label: Nazwa listy, name: name, widget: string }
+                - { label: Tytuł, name: title, widget: string }
+                - label: Podpunkty
+                  name: data
+                  widget: list
+                  fields:
+                    - { label: Nagłówek, name: title, widget: text }
+                    - { label: Tekst, name: text, widget: text }
+                    - { label: Obrazek, name: image, widget: image }
+                    - { label: Opis obrazka, name: imageAlt, widget: string }
 
           - label: "Oferty"
             name: "offers"
             fields:
-              - label: Tytuł
-                name: title
-                widget: string
-                default: Oferty
-              - label: Lista ofert
-                name: data
-                widget: list
-                min: 1
-                fields:
-                  - { label: "Tytuł", name: "title", widget: "string" }
-                  - {
-                      label: "Podpunkty",
-                      name: "points",
-                      widget: "list",
-                      summary: "{{fields.point}}",
-                      field:
-                        {
-                          label: "Podpunkt",
-                          name: "point",
-                          widget: "markdown",
-                        },
-                    }
-                  - {
-                      label: "Bonusy",
-                      name: "bonuses",
-                      widget: "list",
-                      summary: "{{fields.bonus}}",
-                      field:
-                        {
-                          label: "Podpunkt",
-                          name: "bonus",
-                          widget: "markdown",
-                        },
-                    }
-                  - {
-                      label: "Stara cena",
-                      name: "old_price",
-                      widget: "number",
-                      required: false,
-                    }
-                  - { label: "Nowa cena", name: "new_price", widget: "number" }
+              label: Dane
+              name: offers
+              widget: object
+              fields:
+                - label: Tytuł
+                  name: title
+                  widget: string
+                  default: Oferty
+                - label: Lista ofert
+                  name: data
+                  widget: list
+                  min: 1
+                  fields:
+                    - { label: "Tytuł", name: "title", widget: "string" }
+                    - {
+                        label: "Podpunkty",
+                        name: "points",
+                        widget: "list",
+                        summary: "{{fields.point}}",
+                        field:
+                          {
+                            label: "Podpunkt",
+                            name: "point",
+                            widget: "markdown",
+                          },
+                      }
+                    - {
+                        label: "Bonusy",
+                        name: "bonuses",
+                        widget: "list",
+                        summary: "{{fields.bonus}}",
+                        field:
+                          {
+                            label: "Podpunkt",
+                            name: "bonus",
+                            widget: "markdown",
+                          },
+                      }
+                    - {
+                        label: "Stara cena",
+                        name: "old_price",
+                        widget: "number",
+                        required: false,
+                      }
+                    - {
+                        label: "Nowa cena",
+                        name: "new_price",
+                        widget: "number",
+                      }
