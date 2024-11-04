@@ -10,6 +10,9 @@ interface SectionsDataProps {
 }
 
 const IndexPage: React.FC<PageProps> = ({ data }) => {
+  if (!data) {
+    return <h1>Upss! Sth went wrong!</h1>;
+  }
   const {
     allSectionsListItems: { nodes },
   } = data as SectionsDataProps;
@@ -24,8 +27,8 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
 export const Head: HeadFC = () => <title>MrsMatchem</title>;
 
 export const query = graphql`
-  query GetSections {
-    allSectionsListItems {
+  query {
+    allSectionsListItems(sort: { index: ASC }) {
       nodes {
         id
         type
