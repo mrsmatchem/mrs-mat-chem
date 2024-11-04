@@ -13,7 +13,7 @@ collections:
     extension: mdx
     format: frontmatter
     path: "/index"
-    media_folder: "media"
+    media_folder: "media/{{sections.name}}"
     public_folder: "media"
     fields:
       - label: "Lista sekcji"

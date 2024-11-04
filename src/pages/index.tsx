@@ -75,6 +75,22 @@ export const query = graphql`
               }
             }
           }
+          testimonials {
+            data {
+              after_list
+              after_list_title
+              before_list
+              before_list_title
+              comment
+              name
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
         }
       }
     }
