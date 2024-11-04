@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
-import { DataProps } from "../../../../lib/types";
 import Testimonial from "./testimonial";
 
 export interface TestimonialData {
