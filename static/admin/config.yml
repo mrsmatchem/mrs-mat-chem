@@ -143,7 +143,7 @@ collections:
 
           - label: "Oferty"
             name: "offers"
-            fields:
+            field:
               label: Dane
               name: offers
               widget: object
