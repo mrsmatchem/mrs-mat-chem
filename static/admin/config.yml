@@ -10,6 +10,8 @@ collections:
     name: "sectionsCollection"
     folder: "data/sections"
     path: "{{slug}}/index"
+    extension: mdx
+    format: frontmatter
     media_folder: "media"
     public_folder: "media"
     fields:
