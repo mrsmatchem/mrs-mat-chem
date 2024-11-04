@@ -1,13 +1,7 @@
 import * as React from "react";
 import { graphql, type HeadFC, type PageProps } from "gatsby";
 import Section from "../components/sections/section";
-import {
-  HeaderDataProps,
-  IntersectionDataProps,
-  NodeDataProps,
-  OffersDataProps,
-  TabsListDataProps,
-} from "../../lib/types";
+import { NodeDataProps } from "../../lib/types";
 
 interface SectionsDataProps {
   allSectionsListItems: {
