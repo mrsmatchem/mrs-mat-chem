@@ -1,10 +1,4 @@
-import {
-  GatsbyImage,
-  getImage,
-  getImageData,
-  ImageDataLike,
-  StaticImage,
-} from "gatsby-plugin-image";
+import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { list } from "../../../testData";
 

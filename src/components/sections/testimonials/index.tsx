@@ -1,4 +1,3 @@
-import { graphql, useStaticQuery } from "gatsby";
 import { ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
 import Testimonial from "./testimonial";

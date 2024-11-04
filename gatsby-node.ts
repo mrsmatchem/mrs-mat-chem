@@ -1,21 +1,4 @@
-import { sectionsList } from "./data/sections/sections.json";
-
-import { GatsbyNode, NodePluginArgs } from "gatsby";
-
-// exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-//   sectionsList.forEach((section, index) => {
-//     const node = {
-//       ...section,
-//       id: createNodeId(index),
-//       internal: {
-//         type: "SectionsElements",
-//         contentDigest: createContentDigest(section),
-//       },
-//     };
-
-//     actions.createNode(node);
-//   });
-// };
+import { GatsbyNode } from "gatsby";
 
 export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gatsbyApi) => {
   const mdxNodes = gatsbyApi.getNodesByType("Mdx");

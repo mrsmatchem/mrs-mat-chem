@@ -1,8 +1,6 @@
-import { getImage, getImageData } from "gatsby-plugin-image";
 import React from "react";
 
 const HorizontalList = () => {
-
   return (
     <section className="py-10 sm:py-16 lg:py-24">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">

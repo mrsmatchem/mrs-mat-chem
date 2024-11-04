@@ -1,8 +1,7 @@
 import { ImageDataLike } from "gatsby-plugin-image";
 
-export interface NodeDataProps {
+export interface SectionDataProps {
   type: string;
-  id: string;
   header?: HeaderDataProps;
   intersection?: IntersectionDataProps;
   tabsList?: TabsListDataProps;

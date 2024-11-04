@@ -1,10 +1,4 @@
-import {
-  GatsbyImage,
-  type ImageDataLike,
-  StaticImage,
-  getImage,
-  getSrc,
-} from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { HeaderDataProps } from "../../../../lib/types";
 import React from "react";
 import Button from "../../button";

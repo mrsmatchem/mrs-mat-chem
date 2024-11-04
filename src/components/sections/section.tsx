@@ -1,17 +1,11 @@
 import React from "react";
 import Header from "./header";
-import {
-  HeaderDataProps,
-  IntersectionDataProps,
-  NodeDataProps,
-  OffersDataProps,
-  TabsListDataProps,
-} from "../../../lib/types";
+import { SectionDataProps } from "../../../lib/types";
 import Offers from "./offers";
 
 interface SectionProps {
   type: string;
-  data: NodeDataProps;
+  data: SectionDataProps;
 }
 
 const Section = ({ type, data }: SectionProps) => {

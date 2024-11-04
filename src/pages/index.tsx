@@ -1,24 +1,26 @@
 import * as React from "react";
 import { graphql, type HeadFC, type PageProps } from "gatsby";
 import Section from "../components/sections/section";
-import { NodeDataProps } from "../../lib/types";
+import { SectionDataProps } from "../../lib/types";
 
 interface SectionsDataProps {
-  allSectionsListItems: {
-    nodes: NodeDataProps[];
+  mdx: {
+    frontmatter: {
+      sections: SectionDataProps[];
+    };
   };
 }
 
 const IndexPage: React.FC<PageProps> = ({ data }) => {
-  if (!data) {
-    return <h1>Upss! Sth went wrong!</h1>;
-  }
+  console.log(data);
   const {
-    allSectionsListItems: { nodes },
+    mdx: {
+      frontmatter: { sections },
+    },
   } = data as SectionsDataProps;
-  console.log(nodes);
-  const sectionsGenerator = nodes.map((node) => {
-    return <Section key={node.id} type={node.type} data={node} />;
+  console.log(sections);
+  const sectionsGenerator = sections.map((section, index) => {
+    return <Section key={index} type={section.type} data={section} />;
   });
 
   return <main className="bg-secondary text-white">{sectionsGenerator}</main>;
@@ -27,48 +29,49 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
 export const Head: HeadFC = () => <title>MrsMatchem</title>;
 
 export const query = graphql`
-  query {
-    allSectionsListItems(sort: { index: ASC }) {
-      nodes {
-        id
-        type
-        header {
-          description
-          text
-          title
-          image {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-        intersection {
-          variant
-          elements {
-            color
-            text
-            textType
-          }
-        }
-        offers {
-          data {
-            bonuses
-            new_price
-            old_price
-            points
-            title
-          }
-        }
-        tabsList {
-          name
-          title
-          data {
-            imageAlt
-            text
-            title
+  query GetSections {
+    mdx {
+      frontmatter {
+        sections {
+          type
+          header {
+            description
             image {
               childImageSharp {
                 gatsbyImageData
+              }
+            }
+            text
+            title
+          }
+          intersection {
+            variant
+            elements {
+              color
+              text
+              textType
+            }
+          }
+          offers {
+            data {
+              bonuses
+              new_price
+              old_price
+              points
+              title
+            }
+          }
+          tabsList {
+            name
+            title
+            data {
+              imageAlt
+              text
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
             }
           }
