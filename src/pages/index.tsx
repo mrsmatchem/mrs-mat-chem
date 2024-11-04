@@ -1,31 +1,84 @@
 import * as React from "react";
-import { type HeadFC, type PageProps } from "gatsby";
-import Header from "../components/sections/header";
-import Offers from "../components/sections/offers";
-import Testimonials from "../components/sections/testimonials";
-import List from "../components/sections/lists/list";
-import { DataProps, HeaderDataProps } from "../../lib/types";
-import JSONData from "../../data/sections/sections.json";
+import { graphql, type HeadFC, type PageProps } from "gatsby";
+import Section from "../components/sections/section";
+import {
+  HeaderDataProps,
+  IntersectionDataProps,
+  NodeDataProps,
+  OffersDataProps,
+  TabsListDataProps,
+} from "../../lib/types";
 
-interface SectionsTypes {
-  type: string[];
+interface SectionsDataProps {
+  allSectionsListItems: {
+    nodes: NodeDataProps[];
+  };
 }
 
-const IndexPage: React.FC<PageProps> = () => {
-  // const headerData = JSONData.sectionsList.find((el) => el.type === "header");
-  // const types = JSONData.sectionsList.map((el) => el.type);
+const IndexPage: React.FC<PageProps> = ({ data }) => {
+  const {
+    allSectionsListItems: { nodes },
+  } = data as SectionsDataProps;
+  console.log(nodes);
+  const sectionsGenerator = nodes.map((node) => {
+    return <Section key={node.id} type={node.type} data={node} />;
+  });
 
-  // const header = { ...headerData } as HeaderDataProps;
-
-  return (
-    <main className="bg-secondary text-white">
-      {/* {headerData && <Header data={header} />} */}
-      {/* <Offers /> */}
-      {/* <Testimonials /> */}
-    </main>
-  );
+  return <main className="bg-secondary text-white">{sectionsGenerator}</main>;
 };
 
 export const Head: HeadFC = () => <title>MrsMatchem</title>;
+
+export const query = graphql`
+  query GetSections {
+    allSectionsListItems {
+      nodes {
+        id
+        type
+        header {
+          description
+          text
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+        intersection {
+          variant
+          elements {
+            color
+            text
+            textType
+          }
+        }
+        offers {
+          data {
+            bonuses
+            new_price
+            old_price
+            points
+            title
+          }
+        }
+        tabsList {
+          name
+          title
+          data {
+            imageAlt
+            text
+            title
+            image {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;

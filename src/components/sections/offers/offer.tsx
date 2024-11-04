@@ -1,5 +1,5 @@
 import React from "react";
-import { OfferDataProps } from ".";
+import { OfferDataProps } from "../../../../lib/types";
 
 const Offer = ({ data }: { data: OfferDataProps }) => {
   return (

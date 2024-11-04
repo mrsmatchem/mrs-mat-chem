@@ -16,19 +16,14 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-mdx`,
-    `gatsby-plugin-mdx-source-name`,
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/data/`,
+        path: `${__dirname}/data/sections/`,
       },
     },
   ],
-  mapping: {
-    "SectionsJson.sectionsList.type": `TypesJson.type`,
-  },
 };
 
 export default config;

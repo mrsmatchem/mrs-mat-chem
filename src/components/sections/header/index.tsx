@@ -1,4 +1,3 @@
-import { graphql, useStaticQuery } from "gatsby";
 import {
   GatsbyImage,
   type ImageDataLike,
@@ -6,13 +5,12 @@ import {
   getImage,
   getSrc,
 } from "gatsby-plugin-image";
-import { HeaderDataProps, type DataProps } from "../../../../lib/types";
+import { HeaderDataProps } from "../../../../lib/types";
 import React from "react";
 import Button from "../../button";
 
 const Header = ({ data }: { data: HeaderDataProps }) => {
-  // const image = getSrc(data.image);
-  console.log(data.image);
+  const image = getImage(data.image);
 
   const scrollToOffers = () =>
     document
@@ -25,7 +23,7 @@ const Header = ({ data }: { data: HeaderDataProps }) => {
       lg:px-12 overflow-hidden snap-start relative"
     >
       <div
-        className="flex flex-col max-w-[1100px] text-center min-h-screen justify-end
+        className="flex flex-col max-w-[1100px] text-center min-h-screen justify-center
        px-12 pb-20 z-10 bg-black bg-opacity-60 lg:bg-transparent"
       >
         <div>
@@ -39,7 +37,8 @@ const Header = ({ data }: { data: HeaderDataProps }) => {
           Zobacz oferty
         </Button>
       </div>
-      {/* {image && (
+
+      {image && (
         <div className="absolute bottom-0 max-h-full max-w-[25rem] lg:min-w-[25rem] flex lg:self-end lg:relative">
           <GatsbyImage
             className="h-full w-full drop-shadow-[0_0_60px_rgb(219,39,119)]"
@@ -47,7 +46,7 @@ const Header = ({ data }: { data: HeaderDataProps }) => {
             image={image}
           />
         </div>
-      )} */}
+      )}
     </section>
   );
 };
