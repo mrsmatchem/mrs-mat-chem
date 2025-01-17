@@ -13,7 +13,7 @@ collections:
     extension: mdx
     format: frontmatter
     path: "/index"
-    media_folder: "media/{{sections.name}}"
+    media_folder: "media"
     public_folder: "media"
     fields:
       - label: "Lista sekcji"
@@ -193,3 +193,27 @@ collections:
                         name: "new_price",
                         widget: "number",
                       }
+
+          - label: FAQ
+            name: faq
+            field:
+              label: Dane
+              name: faq
+              widget: object
+              fields:
+                - label: Tytuł
+                  name: title
+                  widget: string
+                  default: Najczęściej zadawane pytania
+                  required: false
+                - label: Pytania i odpowiedzi
+                  name: elements
+                  widget: list
+                  min: 2
+                  fields:
+                    - label: Pytanie
+                      name: question
+                      widget: text
+                    - label: Odpowiedź
+                      name: answer
+                      widget: text
